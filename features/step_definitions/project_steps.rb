@@ -48,8 +48,13 @@ When(/^I remove my new project$/) do
   # page.find(:xpath, '//tr/td', text: @project_title)
   @tr = page.find(:xpath, '//tr/td', text: @project_title).find(:xpath, '..')
   # puts current_url; require 'pry'; binding.pry
-  accept_alert do
+
+  unless ENV['BROWSER_TYPE'].blank?
     @tr.find(:xpath, 'td', text: 'Remove').click_link('Remove')
+  else
+    accept_alert do
+      @tr.find(:xpath, 'td', text: 'Remove').click_link('Remove')
+    end
   end
 
 end
