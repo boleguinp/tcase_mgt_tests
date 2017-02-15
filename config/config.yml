@@ -1,0 +1,7 @@
+# environments
+dev:
+    :url: http://localhost:3000
+staging:
+    :url: https://staging-tcasemgt.herokuapp.com
+prod:
+    :url: https://tcasemgt.herokuapp.com

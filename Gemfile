@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+# RoR
 gem 'rails', '5.0.1'
 
+# Cuke
 gem 'cucumber', '2.4.0'
 
 # DSL
@@ -16,3 +18,6 @@ gem 'capybara-webkit', '1.12.0'
 
 # Page Object Model/Patern
 gem 'site_prism', '2.9'
+
+# RSpec
+gem 'rspec', '3.5.0'

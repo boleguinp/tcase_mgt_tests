@@ -1,33 +1,37 @@
 
 Given(/^I am on the Home Page$/) do
-  # visit 'https://staging-tcasemgt.herokuapp.com/'
-   visit 'http://localhost:3000/'
-  ## puts current_url; require 'pry'; binding.pry
+
+  @index_page = @app.index
+  # puts current_url; require 'pry'; binding.pry
+  @index_page.load
+
 end
 
 When(/^I click on My Projects$/) do
-  click_link 'My Projects'
+  @index_page.click_MyProjects
 end
 
-When(/^I click on New Project$/) do
-  click_link 'New Project'
+When(/^I click on my new project$/) do
+  @projects_page = @app.projects
+  @projects_page.click_NewProject
+  @app.checkPage('New Project', page)
 end
 
 When(/^I save the details for my new project$/) do
+  # Genenerate random char for unique project title
   @rdom = rand(1..100)
   @rdom_chr = ('a'..'z').to_a.sample
   @project_title = 'Project_'+ "#{@rdom}" + "#{@rdom_chr}"
   @project_description = 'Proj_Description_'+ "#{@rdom}" + "#{@rdom_chr}"
-  fill_in 'Title', with: @project_title
-  fill_in 'Description', with: @project_description
-  click_button 'Create Project'
-  click_link 'Back'
+
+  # Call Method to create a new project from page object model for /projects/new
+  @projects_new_page = @app.newProject
+  @projects_new_page.create_NewProject(@project_title, @project_description)
 end
 
 Then(/^I should see my newly created project listed$/) do
-   page.has_content?('#{@project_title}')
-   page.has_content?('#{@project_description}')
-   ## puts current_url; require 'pry'; binding.pry
+  @app.checkPage(@project_title, page)
+  @app.checkPage(@project_description, page)
 end
 
 
