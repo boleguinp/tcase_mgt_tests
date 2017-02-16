@@ -6,6 +6,6 @@ Feature: Project Creation
 Scenario: Creating a project
   Given I am on the Home Page
   When I click on My Projects
-  And I click on my new project
+  And I click on New project
   And I save the details for my new project
   Then I should see my newly created project listed

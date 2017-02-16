@@ -20,8 +20,12 @@ module TCasemgt
         @pages[:newProject] ||= TCasemgt::PageObjects::Pages::Project::NewPage.new
       end
 
-      def checkPage(content, page)
-          expect(page).to have_content(content)
+      def checkPage(content, page, has_content)
+          unless has_content
+            expect(page).not_to have_content(content)
+          else
+            expect(page).to have_content(content)
+          end
       end
 
     end

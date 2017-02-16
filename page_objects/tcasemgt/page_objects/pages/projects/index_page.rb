@@ -10,6 +10,16 @@ module TCasemgt
           def click_NewProject
             click_link 'New Project'
           end
+          def remove_Project(project_title, page)
+            @tr = page.find(:xpath, '//tr/td', text: project_title).find(:xpath, '..')
+            unless ENV['BROWSER_TYPE'].blank?
+              @tr.find(:xpath, 'td', text: 'Remove').click_link('Remove')
+            else
+              accept_alert do
+                @tr.find(:xpath, 'td', text: 'Remove').click_link('Remove')
+            end
+          end
+          end
         end
       end
     end
