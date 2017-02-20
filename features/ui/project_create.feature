@@ -8,4 +8,4 @@ Scenario: Creating a project
   When I click on My Projects
   And I click on New project
   And I save the details for my new project
-  Then I should see my newly created project listed
+  Then my project is listed

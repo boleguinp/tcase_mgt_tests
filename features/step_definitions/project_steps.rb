@@ -26,7 +26,7 @@ When(/^I save the details for my new project$/) do
   @projects_new_page.create_NewProject(@project_title, @project_description)
 end
 
-Then(/^I should see my newly created project listed$/) do
+Then(/^my new project is listed$/) do
   @app.checkPage(@project_title, page, true)
   @app.checkPage(@project_description, page, true)
 end
@@ -38,13 +38,13 @@ Given(/^I have created a new project$/) do
     When I click on My Projects
     When I click on New project
     When I save the details for my new project
-    Then I should see my newly created project listed
+    Then my new project is listed
     }
 end
 
 When(/^I remove my new project$/) do
   @projects_page.remove_Project(@project_title, page)
 end
-Then(/^The project should not be listed anymore$/) do
+Then(/^the project is not listed anymore$/) do
   @app.checkPage(@project_title, page, false)
 end

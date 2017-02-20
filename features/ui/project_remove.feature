@@ -10,4 +10,4 @@ Scenario: Removing a project
   Given I am on the Home Page
   When I click on My Projects
   And I remove my new project
-  Then The project should not be listed anymore
+  Then the project is not listed anymore
