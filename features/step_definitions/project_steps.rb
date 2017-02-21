@@ -1,3 +1,9 @@
+Given(/^I generate unique project data$/) do
+  @rdom = rand(1..100)
+  @rdom_chr = ('a'..'z').to_a.sample
+  @project_title = 'Project_'+ "#{@rdom}" + "#{@rdom_chr}"
+  @project_description = 'Proj_Description_'+ "#{@rdom}" + "#{@rdom_chr}"
+end
 
 Given(/^I am on the Home Page$/) do
   @index_page = @app.index
@@ -16,11 +22,9 @@ end
 
 When(/^I save the details for my new project$/) do
   # Genenerate random char for unique project title
-  @rdom = rand(1..100)
-  @rdom_chr = ('a'..'z').to_a.sample
-  @project_title = 'Project_'+ "#{@rdom}" + "#{@rdom_chr}"
-  @project_description = 'Proj_Description_'+ "#{@rdom}" + "#{@rdom_chr}"
-
+  steps %Q{
+    Given I generate unique project data
+  }
   # Call Method to create a new project from page object model for /projects/new
   @projects_new_page = @app.newProject
   @projects_new_page.create_NewProject(@project_title, @project_description)
@@ -47,4 +51,17 @@ When(/^I remove my new project$/) do
 end
 Then(/^the project is not listed anymore$/) do
   @app.checkPage(@project_title, page, false)
+end
+
+When(/^I update my new project$/) do
+  # Storing current project title
+  @project_title_old = @project_title
+  steps %Q{
+    Given I generate unique project data
+  }
+  @projects_page.update_Project(@project_title_old, @project_title, @project_description, page)
+end
+
+Then(/^the new project info is displayed$/) do
+  pending # Write code here that turns the phrase above into concrete actions
 end
