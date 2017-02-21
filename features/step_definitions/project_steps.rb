@@ -21,7 +21,7 @@ When(/^I click on New project$/) do
 end
 
 When(/^I save the details for my new project$/) do
-  # Genenerate random char for unique project title
+  # Generate random char for unique project title
   steps %Q{
     Given I generate unique project data
   }
@@ -34,7 +34,6 @@ Then(/^my new project is listed$/) do
   @app.checkPage(@project_title, page, true)
   @app.checkPage(@project_description, page, true)
 end
-
 
 Given(/^I have created a new project$/) do
   steps %Q{
@@ -49,6 +48,7 @@ end
 When(/^I remove my new project$/) do
   @projects_page.remove_Project(@project_title, page)
 end
+
 Then(/^the project is not listed anymore$/) do
   @app.checkPage(@project_title, page, false)
 end
@@ -56,12 +56,22 @@ end
 When(/^I update my new project$/) do
   # Storing current project title
   @project_title_old = @project_title
+  # Generate random char for unique project title
   steps %Q{
     Given I generate unique project data
   }
-  @projects_page.update_Project(@project_title_old, @project_title, @project_description, page)
+  # Click update button for the new project created
+  @projects_page = @app.projects
+  @projects_page.click_UpdateProject(@project_title_old, page)
+  # Call Method to update new project from page object model for /projects/edit
+  actual_url = URI.parse(current_url).path
+  @projects_edit_page = @app.editProject
+  @projects_edit_page.set_page_url(actual_url)
+  @projects_edit_page.update_Project(@project_title, @project_description)
 end
 
 Then(/^the new project info is displayed$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  steps %Q{
+    Then my new project is listed
+  }
 end
