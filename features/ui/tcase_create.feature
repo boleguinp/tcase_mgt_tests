@@ -1,3 +1,4 @@
+@ui @tcase
 Feature: TCase Creation
   As a tester
   I want to be able to create test cases for a project

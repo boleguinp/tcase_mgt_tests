@@ -1,3 +1,4 @@
+@ui @tcase
 Feature: Project removal
   As a tester
   I want to be able to remove projects
