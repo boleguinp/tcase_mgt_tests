@@ -24,6 +24,11 @@ module TCasemgt
               @tr = page.find(:xpath, '//tr/td', text: project_title_old).find(:xpath, '..')
               @tr.find(:xpath, 'td', text: 'Update').click_link('Update')
           end
+          def click_ViewProject(project_title, page)
+              # Click View
+              @tr = page.find(:xpath, '//tr/td', text: project_title).find(:xpath, '..')
+              @tr.find(:xpath, 'td', text: 'View').click_link('View')
+          end
         end
       end
     end

@@ -8,7 +8,7 @@ require 'site_prism'
 require_relative '../../page_objects/tcasemgt/all_page_objects'
 
 ## Environment initialisation
-ENV['DOMAIN'] ||= 'staging'
+ENV['DOMAIN'] ||= 'dev'
 project_root = File.expand_path('./../../..', __FILE__)
 $BASE_URL = YAML.load_file(project_root + "/config/config.yml")[ENV['DOMAIN']][:url]
 

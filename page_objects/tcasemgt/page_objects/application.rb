@@ -24,6 +24,10 @@ module TCasemgt
         @pages[:editProject] ||= TCasemgt::PageObjects::Pages::Project::EditPage.new
       end
 
+      def viewProject
+        @pages[:ViewProject] ||= TCasemgt::PageObjects::Pages::Project::ViewPage.new
+      end
+
       def checkPage(content, page, has_content)
           unless has_content
             expect(page).not_to have_content(content)
