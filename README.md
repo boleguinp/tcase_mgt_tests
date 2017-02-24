@@ -27,6 +27,8 @@ http://thewanderingcoder.com/2015/07/testing-with-page-objects-implementation/
 ## Factory Girl: Manage your test data
 http://jameschambers.co/writing/cucumber-for-beginners-test-data/
 
+## REST Api
+https://www.codementor.io/kristophmatthews/how-to-configure-your-first-rails-rest-api-du1084ym0
 
 ## debugging
 puts current_url; require 'pry'; binding.pry
