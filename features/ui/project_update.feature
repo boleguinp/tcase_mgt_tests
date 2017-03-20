@@ -1,3 +1,4 @@
+@ui @project
 Feature: Project update
   As a tester
   I want to be able to update my project info

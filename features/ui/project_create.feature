@@ -1,3 +1,4 @@
+@ui @project
 Feature: Project Creation
   As a tester
   I want to be able to create projects

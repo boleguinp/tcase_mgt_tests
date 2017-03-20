@@ -6,19 +6,28 @@ module TCasemgt
       module Project
         class IndexPage < SitePrism::Page
           set_url "/projects"
-
           def click_NewProject
-            click_link 'New Project'
+              click_link 'New Project'
           end
           def remove_Project(project_title, page)
-            @tr = page.find(:xpath, '//tr/td', text: project_title).find(:xpath, '..')
+              @tr = page.find(:xpath, '//tr/td', text: project_title).find(:xpath, '..')
             unless ENV['BROWSER_TYPE'].blank?
-              @tr.find(:xpath, 'td', text: 'Remove').click_link('Remove')
-            else
-              accept_alert do
                 @tr.find(:xpath, 'td', text: 'Remove').click_link('Remove')
+            else
+                accept_alert do
+                  @tr.find(:xpath, 'td', text: 'Remove').click_link('Remove')
+                end
             end
           end
+          def click_UpdateProject(project_title_old, page)
+              # Click Update
+              @tr = page.find(:xpath, '//tr/td', text: project_title_old).find(:xpath, '..')
+              @tr.find(:xpath, 'td', text: 'Update').click_link('Update')
+          end
+          def click_ViewProject(project_title, page)
+              # Click View
+              @tr = page.find(:xpath, '//tr/td', text: project_title).find(:xpath, '..')
+              @tr.find(:xpath, 'td', text: 'View').click_link('View')
           end
         end
       end
