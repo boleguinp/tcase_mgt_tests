@@ -5,15 +5,17 @@ require 'capybara-webkit'
 require 'active_support'
 require 'active_support/core_ext'
 require 'site_prism'
+require 'httparty'
 require_relative '../../support_objects/page_objects/tcasemgt/all_page_objects'
+
 
 ## Environment initialisation
 ENV['DOMAIN'] ||= 'dev'
 project_root = File.expand_path('./../../..', __FILE__)
 $BASE_URL = YAML.load_file(project_root + "/config/config.yml")[ENV['DOMAIN']][:url]
 
-puts $BASE_URL
-puts ENV['BROWSER_TYPE'].to_sym
+#puts $BASE_URL
+#puts ENV['BROWSER_TYPE'].to_sym
 
 ## Capybara
 # Capybara host
@@ -30,7 +32,7 @@ end
 Capybara.register_driver :selenium_chrome do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)
 end
-Capybara.default_driver = ENV['BROWSER_TYPE'].to_sym
+# Capybara.default_driver = ENV['BROWSER_TYPE'].to_sym
 
 unless ENV['BROWSER_TYPE'].blank?
   Capybara.current_driver = ENV['BROWSER_TYPE'].to_sym

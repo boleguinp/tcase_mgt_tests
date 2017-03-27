@@ -21,3 +21,6 @@ gem 'capybara-webkit', '1.12.0'
 
 # Page Object Model/Patern
 gem 'site_prism', '2.9'
+
+# API testing gem
+gem 'httparty', '0.14.0'

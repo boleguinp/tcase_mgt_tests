@@ -1,12 +1,18 @@
 Feature: Project API testing
   As a tester
-  I want to be able to submit GET, POST requests to a web service
-  So that I can add, update, remove my projects
+  I want to be able to submit GET, POST, PATCH, PUT and DELETE requests to a web service
+  So that I can add, update, remove my projects and more
 
-Scenario: Getting my project listing
+Scenario: Getting my listing projects
   When I send a request to get a list of projects
-  Then I get back my saved projects
-  And it includes the following projects
-  |Title      |Description          |
-  |Project_59b|Proj_Description_59b |
-  |Project_76c|Proj_Description_76c |
+  Then I get back a response with a list of projects
+  And it includes the following projects:
+  |title      |description          |
+  |Project_79r|Proj_Description_79r |
+  |Project_62v|Proj_Description_62v |
+  |Project_20a|Proj_Description_20a |
+
+  Scenario: Creating a project
+    When I send a request to create a project
+    Then I get back a confirmation response
+    And the new project is listed

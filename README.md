@@ -3,6 +3,7 @@
   bundle install
 
 ## Running Cucumber
+https://saucelabs.com/blog/write-great-cucumber-tests
 
 ## Cleaning db
 
@@ -27,8 +28,15 @@ http://thewanderingcoder.com/2015/07/testing-with-page-objects-implementation/
 ## Factory Girl: Manage your test data
 http://jameschambers.co/writing/cucumber-for-beginners-test-data/
 
-## REST Api
-https://www.codementor.io/kristophmatthews/how-to-configure-your-first-rails-rest-api-du1084ym0
+
+## Api
+https://www.twilio.com/blog/2015/10/4-ways-to-parse-a-json-api-with-ruby.html
+http://lazytester.com/mixing-your-cucumber-tests-with-api-helpers/
+http://anthonyeden.com/2013/07/10/testing-rest-apis-with-cucumber-and-rack.html
+http://www.baeldung.com/cucumber-rest-api-testing
+http://gregbee.ch/blog/effective-api-testing-with-cucumber
+http://www.baeldung.com/cucumber-rest-api-testing
+https://www.youtube.com/watch?v=4qSsHY-Lkpg
 
 ## debugging
 puts current_url; require 'pry'; binding.pry
