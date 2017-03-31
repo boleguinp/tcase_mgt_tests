@@ -24,3 +24,6 @@ gem 'site_prism', '2.9'
 
 # API testing gem
 gem 'httparty', '0.14.0'
+
+# Html parser
+gem 'nokogiri', '1.7.1'
