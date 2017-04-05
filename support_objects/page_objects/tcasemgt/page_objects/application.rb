@@ -1,5 +1,6 @@
-require 'rspec/expectations'
 # file: page_objects/tcasemgt/page_objects/application.rb
+require 'rspec/expectations'
+
 module TCasemgt
   module PageObjects
     class Application
