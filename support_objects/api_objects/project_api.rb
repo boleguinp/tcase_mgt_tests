@@ -13,6 +13,11 @@ module ApiObjects
       self.class.get("/projects.json")
     end
 
+    # Get method for project
+    def get_project(project_id)
+      self.class.get("/projects/#{project_id}")
+    end
+
     # Post method for new project
     def post_new_project
       self.class.params
@@ -22,6 +27,7 @@ module ApiObjects
       self.class.post("/projects.json", options)
     end
 
+    # Delete method for project
     def delete_project(project_id)
       options = {:body => {:project_id => project_id
         }}
@@ -53,7 +59,6 @@ module ApiObjects
           "title" => 'Project_'+ "#{@rdom}" + "#{@rdom_chr}",
           "description" => 'Proj_Description_'+ "#{@rdom}" + "#{@rdom_chr}"
       }
-      #return @@params
     end
   end
 end

@@ -6,7 +6,6 @@ require 'active_support'
 require 'active_support/core_ext'
 require 'site_prism'
 require 'httparty'
-# encoding: utf-8
 require 'nokogiri'
 require_relative '../../support_objects/page_objects/tcasemgt/all_page_objects'
 require_relative '../../support_objects/api_objects/all_api_objects'

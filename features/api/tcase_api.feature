@@ -9,10 +9,10 @@ Background:
 Scenario: Creating a tcase
   When I send a request to create a tcase
   Then I get back a confirmation response
-  And the new tcase is listed
+  And the new tcase is "listed"
 
 Scenario: Removing a tcase
   Given I have added a new tcase
   When I send a request to remove the tcase
   Then I get back a confirmation response
-  And the new tcase is not listed anymore
+  And the new tcase is "not listed anymore"

@@ -1,10 +1,11 @@
 Before do |scenario|
   # POM Application class instantiation
   @app ||= TCasemgt::PageObjects::Application.new
-    # API Application class instantiation
+  # API Application class instantiation
   @api ||= ApiObjects::Application.new
   # ProjectApi class instantiation
   @project_api = @api.project
+  @tcase_api = @api.tcase
 end
 After do |scenario|
   # teardown
