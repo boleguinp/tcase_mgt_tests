@@ -29,7 +29,7 @@ module TCasemgt
         @pages[:ViewProject] ||= TCasemgt::PageObjects::Pages::Project::ViewPage.new
       end
 
-      def checkPage(content, page, has_content)
+      def validate_page(content, page, has_content)
           unless has_content
             expect(page).not_to have_content(content)
           else

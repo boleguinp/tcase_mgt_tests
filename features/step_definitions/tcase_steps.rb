@@ -24,8 +24,8 @@ When(/^I create a test case$/) do
 end
 
 Then(/^my test case is listed$/) do
-  @app.checkPage(@tcase_id, page, true)
-  @app.checkPage(@tcase_title, page, true)
+  @app.validate_page(@tcase_id, page, true)
+  @app.validate_page(@tcase_title, page, true)
   click_link 'Back'
 end
 
@@ -45,7 +45,7 @@ When(/^I remove my new test case$/) do
 end
 
 Then(/^the test case is not listed anymore$/) do
-  @app.checkPage(@tcase_id, page, false)
-  @app.checkPage(@tcase_title, page, false)
+  @app.validate_page(@tcase_id, page, false)
+  @app.validate_page(@tcase_title, page, false)
   click_link 'Back'
 end

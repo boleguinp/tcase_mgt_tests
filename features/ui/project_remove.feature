@@ -2,7 +2,7 @@
 Feature: Project removal
   As a tester
   I want to be able to remove projects
-  So that I can keep my listing projects nice and tidy
+  So that I can keep my project list nice and tidy
 
 Background:
   Given I have created a new project

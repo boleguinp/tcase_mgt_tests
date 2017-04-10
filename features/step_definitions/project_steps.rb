@@ -17,7 +17,7 @@ end
 When(/^I click on New project$/) do
   @projects_page = @app.projects
   @projects_page.click_NewProject
-  @app.checkPage('New Project', page, true)
+  @app.validate_page('New Project', page, true)
 end
 
 When(/^I save the details for my new project$/) do
@@ -31,8 +31,8 @@ When(/^I save the details for my new project$/) do
 end
 
 Then(/^my new project is listed$/) do
-  @app.checkPage(@project_title, page, true)
-  @app.checkPage(@project_description, page, true)
+  @app.validate_page(@project_title, page, true)
+  @app.validate_page(@project_description, page, true)
 end
 
 Given(/^I have created a new project$/) do
@@ -50,7 +50,7 @@ When(/^I remove my new project$/) do
 end
 
 Then(/^the project is not listed anymore$/) do
-  @app.checkPage(@project_title, page, false)
+  @app.validate_page(@project_title, page, false)
 end
 
 When(/^I update my new project$/) do
