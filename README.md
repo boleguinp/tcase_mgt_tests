@@ -12,6 +12,8 @@ bundle install
 cucumber features/ui
 
 * running a feature file:
+cucumber features/ui/project_create.feature -p headless
+
 cucumber features/api/project_api.feature
 
 * using profile for headless browser (webkit):
