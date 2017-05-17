@@ -31,7 +31,7 @@ module ApiObjects
 
     # Validate http response
     def validate_tcase(response, should_exist)
-      page = Nokogiri::HTML(@response)
+      page = Nokogiri::HTML(response)
       domObject = page.xpath('//tr/td')
       for i in 0..domObject.length-1
         if (domObject[i].text == @tcase_id || i>= domObject.length)
