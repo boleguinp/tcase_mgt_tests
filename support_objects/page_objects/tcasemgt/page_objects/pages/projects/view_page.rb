@@ -11,7 +11,7 @@ module TCasemgt
           end
 
           def create_NewTCase(tcase_id, tcase_title, tcase_scenario, tcase_status)
-            fill_in 'T case', with: tcase_id
+            fill_in 'TCase', with: tcase_id
             fill_in 'Title', with: tcase_title
             fill_in 'Scenario', with: tcase_scenario
             fill_in 'Status', with: tcase_status

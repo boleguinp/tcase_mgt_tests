@@ -8,25 +8,24 @@ clone repo
 bundle install
 
 ## Run cuke tests
-* running a feature folder:
+### running a feature folder:
 cucumber features/ui
 
-* running a feature file:
-cucumber features/ui/project_create.feature -p headless
+### running a feature file:
+* cucumber features/ui/project_create.feature -p headless
+* cucumber features/api/project_api.feature
 
-cucumber features/api/project_api.feature
+### using profile for headless browser (webkit):
+* cucumber features --tags @ui -p headless
 
-* using profile for headless browser (webkit):
-cucumber features --tags @ui -p headless
+### using DOMAIN param to point to env.:
+* cucumber features/api DOMAIN=staging
 
-* using DOMAIN param to point to env.:
-cucumber features/api DOMAIN=staging
+### using tags for ui tests:
+* cucumber features --tags @ui
 
-* using tags for ui tests:
-cucumber features --tags @ui
-
-* using tags for tcase resource tests:
-cucumber features --tags @tcase
+### using tags for tcase resource tests:
+* cucumber features --tags @tcase
 
 ## Also see:
 
